@@ -2,4 +2,11 @@ hi
   hello
   welcome to git hub repo
   this is my 1st content
-  i hope the u are doing well
+---
+hosts:testnode
+become:true
+gatherfacts: false
+ -name:git
+  apt:
+    name:git
+    state:present
