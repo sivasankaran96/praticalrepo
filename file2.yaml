@@ -1,0 +1,8 @@
+---
+hosts: target nodes
+tasks:
+  debug:
+    msg:
+      - "the ansible os family ": {{ ansible_distribution }}
+      - " the ansible name is ": {{ansible_family}}
+
