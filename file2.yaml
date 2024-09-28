@@ -1,8 +1,14 @@
 ---
 hosts: target nodes
+become: true
 tasks:
-  debug:
-    msg:
-      - "the ansible os family ": {{ ansible_distribution }}
-      - " the ansible name is ": {{ansible_family}}
+ - name: maven
+  apt: 
+    name: maven
+    state: latest
+handlers:
+  - name: maven
+   service:
+       name: maven
+       state: restart
 
